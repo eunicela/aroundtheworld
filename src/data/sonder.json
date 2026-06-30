@@ -1,0 +1,570 @@
+{
+  "cities": [
+    {
+      "id": "mexico-city",
+      "name": "Mexico City",
+      "lat": 19.43,
+      "lon": -99.13,
+      "photographers": [
+        {
+          "id": "sam-youkilis",
+          "name": "Sam Youkilis",
+          "bio": "Documentary photographer and filmmaker finding the poetic in everyday rituals — markets, meals, light, and quiet human gestures around the world.",
+          "url": "https://www.instagram.com/samyoukilis/",
+          "instagram": "https://www.instagram.com/samyoukilis/?hl=en",
+          "images": [
+            {
+              "id": "sam-youkilis-01",
+              "cloudinaryId": "sonder/mexico-city/sam-youkilis-01",
+              "year": "2024",
+              "orientation": "portrait",
+              "lat": 19.42,
+              "lon": -99.17,
+              "title": "Dessert tray at Contramar",
+              "caption": "One of the unvaryingly good classics in Roma Norte."
+            },
+            {
+              "id": "sam-youkilis-02",
+              "cloudinaryId": "sonder/mexico-city/sam-youkilis-02",
+              "year": "2024",
+              "orientation": "landscape",
+              "lat": 19.41,
+              "lon": -99.16,
+              "title": "Fugaz, Roma Norte",
+              "caption": "Seasonal weekend tostadas between Roma Norte and Juárez."
+            },
+            {
+              "id": "sam-youkilis-03",
+              "cloudinaryId": "sonder/mexico-city/sam-youkilis-03",
+              "year": "2024",
+              "orientation": "portrait",
+              "lat": 19.41,
+              "lon": -99.16,
+              "title": "Raw tuna and winter tomatoes",
+              "caption": "At Fugaz — simple, delicious, and whatever is fresh that week."
+            },
+            {
+              "id": "sam-youkilis-04",
+              "cloudinaryId": "sonder/mexico-city/sam-youkilis-04",
+              "year": "2024",
+              "orientation": "portrait",
+              "lat": 19.41,
+              "lon": -99.18,
+              "title": "Campechano taco at Maizajo",
+              "caption": "Tortillas from corn sourced from small-scale farmers surrounding the city."
+            },
+            {
+              "id": "sam-youkilis-05",
+              "cloudinaryId": "sonder/mexico-city/sam-youkilis-05",
+              "year": "2024",
+              "orientation": "landscape",
+              "lat": 19.43,
+              "lon": -99.15,
+              "title": "Milanesa at Paris 16",
+              "caption": "A classic that has not changed much since 1985 on Reforma."
+            },
+            {
+              "id": "sam-youkilis-06",
+              "cloudinaryId": "sonder/mexico-city/sam-youkilis-06",
+              "year": "2024",
+              "orientation": "portrait",
+              "lat": 19.45,
+              "lon": -99.14,
+              "title": "Lagunilla market",
+              "caption": "Sunday morning antiques and midcentury finds in El Centro."
+            },
+            {
+              "id": "sam-youkilis-07",
+              "cloudinaryId": "sonder/mexico-city/sam-youkilis-07",
+              "year": "2022",
+              "orientation": "portrait",
+              "lat": 19.28,
+              "lon": -99.1,
+              "title": "Xochimilco canals",
+              "caption": "The dewy canals and lively alleyways of Mexico City."
+            },
+            {
+              "id": "sam-youkilis-08",
+              "cloudinaryId": "sonder/mexico-city/sam-youkilis-08",
+              "year": "2022",
+              "orientation": "portrait",
+              "lat": 19.44,
+              "lon": -99.13,
+              "title": "Market passage",
+              "caption": "Walking around and noticing things — markets, murals, and the rhythm of the street."
+            },
+            {
+              "id": "sam-youkilis-09",
+              "cloudinaryId": "sonder/mexico-city/sam-youkilis-09",
+              "year": "2023",
+              "orientation": "portrait",
+              "lat": 19.45,
+              "lon": -99.14,
+              "title": "Sunday morning",
+              "caption": "Lagunilla and the city's largest markets — always worth getting up early."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "new-york",
+      "name": "New York",
+      "lat": 40.7,
+      "lon": -74,
+      "photographers": [
+        {
+          "id": "sam-youkilis",
+          "name": "Sam Youkilis",
+          "bio": "Documentary photographer and filmmaker finding the poetic in everyday rituals — markets, meals, light, and quiet human gestures around the world.",
+          "url": "https://www.instagram.com/samyoukilis/",
+          "instagram": "https://www.instagram.com/samyoukilis/?hl=en",
+          "images": [
+            {
+              "id": "sam-youkilis-01",
+              "cloudinaryId": "sonder/new-york/sam-youkilis-01",
+              "year": "2023",
+              "orientation": "portrait",
+              "lat": 40.72,
+              "lon": -74.01,
+              "title": "West Broadway, Tribeca",
+              "caption": "Photographed from the loading dock of the apartment I grew up in downtown Manhattan."
+            },
+            {
+              "id": "sam-youkilis-02",
+              "cloudinaryId": "sonder/new-york/sam-youkilis-02",
+              "year": "2023",
+              "orientation": "portrait",
+              "lat": 40.73,
+              "lon": -74,
+              "title": "Morning window",
+              "caption": "The view from my window every morning before strolling through the streets."
+            },
+            {
+              "id": "sam-youkilis-03",
+              "cloudinaryId": "sonder/new-york/sam-youkilis-03",
+              "year": "2022",
+              "orientation": "portrait",
+              "lat": 40.71,
+              "lon": -74.01,
+              "title": "Lower Manhattan",
+              "caption": "Growing up in New York, carrying a camera everywhere I went."
+            },
+            {
+              "id": "sam-youkilis-04",
+              "cloudinaryId": "sonder/new-york/sam-youkilis-04",
+              "year": "2021",
+              "orientation": "landscape",
+              "lat": 40.74,
+              "lon": -73.99,
+              "title": "Street crossing",
+              "caption": "Whatever is happening, I want to document it."
+            },
+            {
+              "id": "sam-youkilis-05",
+              "cloudinaryId": "sonder/new-york/sam-youkilis-05",
+              "year": "2023",
+              "orientation": "portrait",
+              "lat": 40.72,
+              "lon": -74,
+              "title": "Downtown crossing",
+              "caption": "Reactive and responsive — framing and composing in seconds."
+            },
+            {
+              "id": "sam-youkilis-06",
+              "cloudinaryId": "sonder/new-york/sam-youkilis-06",
+              "year": "2023",
+              "orientation": "portrait",
+              "lat": 40.73,
+              "lon": -73.99,
+              "title": "Sidewalk moment",
+              "caption": "A discreetly observant eye for quiet and often humorous moments of humanity."
+            },
+            {
+              "id": "sam-youkilis-07",
+              "cloudinaryId": "sonder/new-york/sam-youkilis-07",
+              "year": "2023",
+              "orientation": "portrait",
+              "lat": 40.71,
+              "lon": -74,
+              "title": "Strangers in motion",
+              "caption": "Whatever is happening in real time — my work is a response to those things."
+            },
+            {
+              "id": "sam-youkilis-08",
+              "cloudinaryId": "sonder/new-york/sam-youkilis-08",
+              "year": "2022",
+              "orientation": "portrait",
+              "lat": 40.72,
+              "lon": -74.01,
+              "title": "Lower Manhattan corner",
+              "caption": "I leave the house with no other plans but to take pictures."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rome",
+      "name": "Rome",
+      "lat": 41.9,
+      "lon": 12.5,
+      "photographers": [
+        {
+          "id": "sam-youkilis",
+          "name": "Sam Youkilis",
+          "bio": "Documentary photographer and filmmaker finding the poetic in everyday rituals — markets, meals, light, and quiet human gestures around the world.",
+          "url": "https://www.instagram.com/samyoukilis/",
+          "instagram": "https://www.instagram.com/samyoukilis/?hl=en",
+          "images": [
+            {
+              "id": "sam-youkilis-03",
+              "cloudinaryId": "sonder/rome/sam-youkilis-03",
+              "year": "2023",
+              "orientation": "portrait",
+              "lat": 41.89,
+              "lon": 12.48,
+              "title": "Espresso at the counter",
+              "caption": "The fresh cup handed across the counter — light, color, and rich tones."
+            },
+            {
+              "id": "sam-youkilis-04",
+              "cloudinaryId": "sonder/rome/sam-youkilis-04",
+              "year": "2022",
+              "orientation": "portrait",
+              "lat": 41.88,
+              "lon": 12.47,
+              "title": "Vegetable stand",
+              "caption": "Intensely colorful items displayed at a market stall."
+            },
+            {
+              "id": "sam-youkilis-05",
+              "cloudinaryId": "sonder/rome/sam-youkilis-05",
+              "year": "2022",
+              "orientation": "landscape",
+              "lat": 41.91,
+              "lon": 12.51,
+              "title": "Afternoon light",
+              "caption": "An alert observer of seemingly trivial situations unfolding before my eyes."
+            },
+            {
+              "id": "sam-youkilis-06",
+              "cloudinaryId": "sonder/rome/sam-youkilis-06",
+              "year": "2022",
+              "orientation": "portrait",
+              "lat": 41.9,
+              "lon": 12.49,
+              "title": "Street corner",
+              "caption": "Strolling through the streets as an alert observer."
+            },
+            {
+              "id": "sam-youkilis-07",
+              "cloudinaryId": "sonder/rome/sam-youkilis-07",
+              "year": "2022",
+              "orientation": "portrait",
+              "lat": 41.88,
+              "lon": 12.5,
+              "title": "Passing figures",
+              "caption": "People walking while carrying things — a recurring scene in the archive."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "florence",
+      "name": "Florence",
+      "lat": 43.77,
+      "lon": 11.25,
+      "photographers": [
+        {
+          "id": "sam-youkilis",
+          "name": "Sam Youkilis",
+          "bio": "Documentary photographer and filmmaker finding the poetic in everyday rituals — markets, meals, light, and quiet human gestures around the world.",
+          "url": "https://www.instagram.com/samyoukilis/",
+          "instagram": "https://www.instagram.com/samyoukilis/?hl=en",
+          "images": [
+            {
+              "id": "sam-youkilis-02",
+              "cloudinaryId": "sonder/florence/sam-youkilis-02",
+              "year": "2023",
+              "orientation": "portrait",
+              "lat": 43.77,
+              "lon": 11.25,
+              "title": "Piazza bench",
+              "caption": "The casual tenderness of human gestures in a town square."
+            },
+            {
+              "id": "sam-youkilis-03",
+              "cloudinaryId": "sonder/florence/sam-youkilis-03",
+              "year": "2022",
+              "orientation": "portrait",
+              "lat": 43.78,
+              "lon": 11.24,
+              "title": "Market colors",
+              "caption": "Food, ingredients, and the stories behind how they are made."
+            },
+            {
+              "id": "sam-youkilis-04",
+              "cloudinaryId": "sonder/florence/sam-youkilis-04",
+              "year": "2022",
+              "orientation": "portrait",
+              "lat": 43.76,
+              "lon": 11.26,
+              "title": "Through a mirror",
+              "caption": "Composition, chiaroscuro, and framing in everyday scenes."
+            },
+            {
+              "id": "sam-youkilis-05",
+              "cloudinaryId": "sonder/florence/sam-youkilis-05",
+              "year": "2023",
+              "orientation": "portrait",
+              "lat": 43.77,
+              "lon": 11.25,
+              "title": "Town square",
+              "caption": "The casual tenderness of human gestures in public space."
+            },
+            {
+              "id": "sam-youkilis-06",
+              "cloudinaryId": "sonder/florence/sam-youkilis-06",
+              "year": "2022",
+              "orientation": "portrait",
+              "lat": 43.77,
+              "lon": 11.26,
+              "title": "Alleyway light",
+              "caption": "Finding a frame I like and waiting for things to happen within it."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "essaouira",
+      "name": "Essaouira",
+      "lat": 31.5,
+      "lon": -9.77,
+      "photographers": [
+        {
+          "id": "sam-youkilis",
+          "name": "Sam Youkilis",
+          "bio": "Documentary photographer and filmmaker finding the poetic in everyday rituals — markets, meals, light, and quiet human gestures around the world.",
+          "url": "https://www.instagram.com/samyoukilis/",
+          "instagram": "https://www.instagram.com/samyoukilis/?hl=en",
+          "images": [
+            {
+              "id": "sam-youkilis-01",
+              "cloudinaryId": "sonder/essaouira/sam-youkilis-01",
+              "year": "2022",
+              "orientation": "landscape",
+              "lat": 31.35,
+              "lon": -9.8,
+              "title": "Sidi Kaouki beach",
+              "caption": "A sleepy fishing village — surfers, camels, and fishermen along a semi-deserted beach."
+            },
+            {
+              "id": "sam-youkilis-02",
+              "cloudinaryId": "sonder/essaouira/sam-youkilis-02",
+              "year": "2021",
+              "orientation": "landscape",
+              "lat": 31.51,
+              "lon": -9.76,
+              "title": "Atlantic coast",
+              "caption": "Every visit to Essaouira, I make sure to stop in Sidi Kaouki as well."
+            },
+            {
+              "id": "sam-youkilis-03",
+              "cloudinaryId": "sonder/essaouira/sam-youkilis-03",
+              "year": "2021",
+              "orientation": "landscape",
+              "lat": 31.5,
+              "lon": -9.77,
+              "title": "Fishing boats",
+              "caption": "Fishing boats drifting in the water — light and the rhythm of the coast."
+            },
+            {
+              "id": "sam-youkilis-04",
+              "cloudinaryId": "sonder/essaouira/sam-youkilis-04",
+              "year": "2022",
+              "orientation": "portrait",
+              "lat": 31.51,
+              "lon": -9.77,
+              "title": "Medina alley",
+              "caption": "Wandering the coast and the old city — surfers, fishermen, and quiet corners."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tokyo",
+      "name": "Tokyo",
+      "lat": 35.7,
+      "lon": 139.7,
+      "photographers": [
+        {
+          "id": "sam-youkilis",
+          "name": "Sam Youkilis",
+          "bio": "Documentary photographer and filmmaker finding the poetic in everyday rituals — markets, meals, light, and quiet human gestures around the world.",
+          "url": "https://www.instagram.com/samyoukilis/",
+          "instagram": "https://www.instagram.com/samyoukilis/?hl=en",
+          "images": [
+            {
+              "id": "sam-youkilis-01",
+              "cloudinaryId": "sonder/tokyo/sam-youkilis-01",
+              "year": "2022",
+              "orientation": "portrait",
+              "lat": 34.69,
+              "lon": 135.8,
+              "title": "Nara",
+              "caption": "Mochi-making and other cultural practices captured on the road through Japan."
+            },
+            {
+              "id": "sam-youkilis-02",
+              "cloudinaryId": "sonder/tokyo/sam-youkilis-02",
+              "year": "2022",
+              "orientation": "portrait",
+              "lat": 35.68,
+              "lon": 139.76,
+              "title": "Street ritual",
+              "caption": "Small fragments of reality that blur the line between still and moving images."
+            },
+            {
+              "id": "sam-youkilis-03",
+              "cloudinaryId": "sonder/tokyo/sam-youkilis-03",
+              "year": "2023",
+              "orientation": "landscape",
+              "lat": 35.66,
+              "lon": 139.7,
+              "title": "Evening crossing",
+              "caption": "Everyday Tokyo — soft light and passing trains."
+            },
+            {
+              "id": "sam-youkilis-04",
+              "cloudinaryId": "sonder/tokyo/sam-youkilis-04",
+              "year": "2022",
+              "orientation": "portrait",
+              "lat": 35.68,
+              "lon": 139.7,
+              "title": "Pedestrian crossing",
+              "caption": "Soft light, passing trains, and everyday Tokyo."
+            },
+            {
+              "id": "sam-youkilis-05",
+              "cloudinaryId": "sonder/tokyo/sam-youkilis-05",
+              "year": "2022",
+              "orientation": "portrait",
+              "lat": 35.69,
+              "lon": 139.77,
+              "title": "Street vendor",
+              "caption": "Cultural practices and everyday scenes captured on the road through Japan."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "naples",
+      "name": "Naples",
+      "lat": 40.85,
+      "lon": 14.27,
+      "photographers": [
+        {
+          "id": "sam-youkilis",
+          "name": "Sam Youkilis",
+          "bio": "Documentary photographer and filmmaker finding the poetic in everyday rituals — markets, meals, light, and quiet human gestures around the world.",
+          "url": "https://www.instagram.com/samyoukilis/",
+          "instagram": "https://www.instagram.com/samyoukilis/?hl=en",
+          "images": [
+            {
+              "id": "sam-youkilis-01",
+              "cloudinaryId": "sonder/naples/sam-youkilis-01",
+              "year": "2023",
+              "orientation": "portrait",
+              "lat": 40.85,
+              "lon": 14.25,
+              "title": "Spaccanapoli",
+              "caption": "I fell in love with Naples immediately — a visually rich place and a huge source of inspiration."
+            },
+            {
+              "id": "sam-youkilis-02",
+              "cloudinaryId": "sonder/naples/sam-youkilis-02",
+              "year": "2023",
+              "orientation": "portrait",
+              "lat": 40.84,
+              "lon": 14.25,
+              "title": "Quartieri Spagnoli",
+              "caption": "The lively alleyways of Napoli — dolce vita in its most unvarnished form."
+            },
+            {
+              "id": "sam-youkilis-03",
+              "cloudinaryId": "sonder/naples/sam-youkilis-03",
+              "year": "2022",
+              "orientation": "portrait",
+              "lat": 40.86,
+              "lon": 14.26,
+              "title": "Street market",
+              "caption": "An older Italy — a generation of Italians and a way of life I am drawn to shoot."
+            },
+            {
+              "id": "sam-youkilis-04",
+              "cloudinaryId": "sonder/naples/sam-youkilis-04",
+              "year": "2022",
+              "orientation": "portrait",
+              "lat": 40.83,
+              "lon": 14.24,
+              "title": "Evening stroll",
+              "caption": "Clean graphic framing and a penchant for finding the poetic in the mundane."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "havana",
+      "name": "Havana",
+      "lat": 23.13,
+      "lon": -82.38,
+      "photographers": [
+        {
+          "id": "sam-youkilis",
+          "name": "Sam Youkilis",
+          "bio": "Documentary photographer and filmmaker finding the poetic in everyday rituals — markets, meals, light, and quiet human gestures around the world.",
+          "url": "https://www.instagram.com/samyoukilis/",
+          "instagram": "https://www.instagram.com/samyoukilis/?hl=en",
+          "images": [
+            {
+              "id": "sam-youkilis-01",
+              "cloudinaryId": "sonder/havana/sam-youkilis-01",
+              "year": "2021",
+              "orientation": "portrait",
+              "lat": 23.14,
+              "lon": -82.37,
+              "title": "Fruit cart vendor",
+              "caption": "I wandered downtown Havana and walked with vendors pushing carts of fruit and flowers."
+            },
+            {
+              "id": "sam-youkilis-02",
+              "cloudinaryId": "sonder/havana/sam-youkilis-02",
+              "year": "2021",
+              "orientation": "portrait",
+              "lat": 23.13,
+              "lon": -82.35,
+              "title": "Old Havana street",
+              "caption": "Photographing vendors as they made their rounds through the city."
+            },
+            {
+              "id": "sam-youkilis-03",
+              "cloudinaryId": "sonder/havana/sam-youkilis-03",
+              "year": "2021",
+              "orientation": "portrait",
+              "lat": 23.12,
+              "lon": -82.36,
+              "title": "Colonial corridor",
+              "caption": "Personal work made between assignments — scouting the streets on foot."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
