@@ -7,6 +7,14 @@ interface SiteHeaderProps {
   paddingClass?: string;
 }
 
+export function SiteHeaderTitle() {
+  return (
+    <p className="font-display text-lg tracking-wide text-charcoal/45 sm:text-xl">
+      Photos Around the World
+    </p>
+  );
+}
+
 export function SiteHeader({
   children,
   className = "",

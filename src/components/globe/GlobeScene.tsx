@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { useFrame, useThree } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import * as THREE from "three";
@@ -109,17 +109,28 @@ function clamp(value: number, min: number, max: number): number {
   return Math.min(max, Math.max(min, value));
 }
 
+const GLOBE_LINE_RENDER_ORDER = -10;
+
+function isGlobeLine(
+  child: THREE.Object3D
+): child is THREE.Line | THREE.LineSegments {
+  return child.type === "Line" || child.type === "LineSegments";
+}
+
 function applyGlobeMaterialOpacity(group: THREE.Group, fade: number) {
   group.traverse((child) => {
-    if (!(child instanceof THREE.Line)) return;
+    if (!isGlobeLine(child)) return;
     const material = child.material;
-    if (!(material instanceof THREE.LineBasicMaterial)) return;
+    if (!material || Array.isArray(material) || !("opacity" in material)) return;
+
     const baseOpacity =
       typeof material.userData.baseOpacity === "number"
         ? material.userData.baseOpacity
         : material.opacity;
     material.transparent = true;
     material.opacity = baseOpacity * fade;
+    material.depthWrite = fade > 0.95;
+    child.renderOrder = GLOBE_LINE_RENDER_ORDER;
   });
 }
 
@@ -151,7 +162,7 @@ export function GlobeScene({
     [photoCards]
   );
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (prevViewModeRef.current === null) {
       prevViewModeRef.current = viewMode;
       return;

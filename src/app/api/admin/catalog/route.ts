@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { getAllArchiveImages } from "@/lib/data";
 import { isAdminAuthorized, isAdminEnabled, readSonderData } from "@/lib/admin";
 
 function unauthorized() {
@@ -26,5 +27,17 @@ export async function GET(request: Request) {
     })),
   }));
 
-  return NextResponse.json({ enabled: true, cities });
+  const images = getAllArchiveImages(data).map((image) => ({
+    id: image.id,
+    cityId: image.cityId,
+    cityName: image.cityName,
+    photographerId: image.photographerId,
+    photographerName: image.photographerName,
+    title: image.title,
+    year: image.year,
+    thumbnailUrl: image.thumbnailUrl,
+    archiveUrl: `/gallery/${image.cityId}/${image.id}`,
+  }));
+
+  return NextResponse.json({ enabled: true, cities, images });
 }

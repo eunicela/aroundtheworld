@@ -129,7 +129,7 @@ export function PhotoCard({
 
     if (meshRef.current) {
       meshRef.current.renderOrder =
-        cardBlend > 0.5 ? timelineSlot.sortIndex : 0;
+        globalBlend > 0.001 ? 10 + timelineSlot.sortIndex : 0;
     }
 
     const targetOpacity = visible ? 1 : 0;

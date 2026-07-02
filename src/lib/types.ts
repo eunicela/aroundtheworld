@@ -63,11 +63,16 @@ export interface PhotoCardData {
 export interface ActivePhoto {
   id: string;
   imageUrl: string;
+  width: number;
+  height: number;
   photographerId: string;
   photographerName: string;
   cityId: string;
   cityName: string;
   year?: string;
+  title?: string;
+  editorialCaption?: string;
+  fallbackCaption?: string;
   url: string;
   instagram?: string;
   lon: number;

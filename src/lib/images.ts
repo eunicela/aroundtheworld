@@ -74,3 +74,21 @@ export function getLightboxUrl(
 
   return `/${cloudinaryId}.${localExtension(format)}`;
 }
+
+/** Smaller image for vision-model description requests. */
+export function getDescribeImageUrl(
+  cloudinaryId: string,
+  format?: ImageFormat
+): string {
+  const cloudName = process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME;
+
+  if (cloudName) {
+    return `https://res.cloudinary.com/${cloudName}/image/upload/w_1024,h_1024,c_limit,q_auto,f_auto/${cloudinaryId}`;
+  }
+
+  if (format) {
+    return placeholderUrl(cloudinaryId, 1024, 768);
+  }
+
+  return `/${cloudinaryId}.${localExtension(format)}`;
+}

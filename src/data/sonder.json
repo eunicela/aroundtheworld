@@ -24,56 +24,6 @@
               "caption": "One of the unvaryingly good classics in Roma Norte."
             },
             {
-              "id": "sam-youkilis-02",
-              "cloudinaryId": "sonder/mexico-city/sam-youkilis-02",
-              "year": "2024",
-              "orientation": "landscape",
-              "lat": 19.41,
-              "lon": -99.16,
-              "title": "Fugaz, Roma Norte",
-              "caption": "Seasonal weekend tostadas between Roma Norte and Juárez."
-            },
-            {
-              "id": "sam-youkilis-03",
-              "cloudinaryId": "sonder/mexico-city/sam-youkilis-03",
-              "year": "2024",
-              "orientation": "portrait",
-              "lat": 19.41,
-              "lon": -99.16,
-              "title": "Raw tuna and winter tomatoes",
-              "caption": "At Fugaz — simple, delicious, and whatever is fresh that week."
-            },
-            {
-              "id": "sam-youkilis-04",
-              "cloudinaryId": "sonder/mexico-city/sam-youkilis-04",
-              "year": "2024",
-              "orientation": "portrait",
-              "lat": 19.41,
-              "lon": -99.18,
-              "title": "Campechano taco at Maizajo",
-              "caption": "Tortillas from corn sourced from small-scale farmers surrounding the city."
-            },
-            {
-              "id": "sam-youkilis-05",
-              "cloudinaryId": "sonder/mexico-city/sam-youkilis-05",
-              "year": "2024",
-              "orientation": "landscape",
-              "lat": 19.43,
-              "lon": -99.15,
-              "title": "Milanesa at Paris 16",
-              "caption": "A classic that has not changed much since 1985 on Reforma."
-            },
-            {
-              "id": "sam-youkilis-06",
-              "cloudinaryId": "sonder/mexico-city/sam-youkilis-06",
-              "year": "2024",
-              "orientation": "portrait",
-              "lat": 19.45,
-              "lon": -99.14,
-              "title": "Lagunilla market",
-              "caption": "Sunday morning antiques and midcentury finds in El Centro."
-            },
-            {
               "id": "sam-youkilis-07",
               "cloudinaryId": "sonder/mexico-city/sam-youkilis-07",
               "year": "2022",
@@ -139,16 +89,6 @@
               "lon": -74,
               "title": "Morning window",
               "caption": "The view from my window every morning before strolling through the streets."
-            },
-            {
-              "id": "sam-youkilis-03",
-              "cloudinaryId": "sonder/new-york/sam-youkilis-03",
-              "year": "2022",
-              "orientation": "portrait",
-              "lat": 40.71,
-              "lon": -74.01,
-              "title": "Lower Manhattan",
-              "caption": "Growing up in New York, carrying a camera everywhere I went."
             },
             {
               "id": "sam-youkilis-04",
@@ -303,36 +243,6 @@
               "lon": 11.24,
               "title": "Market colors",
               "caption": "Food, ingredients, and the stories behind how they are made."
-            },
-            {
-              "id": "sam-youkilis-04",
-              "cloudinaryId": "sonder/florence/sam-youkilis-04",
-              "year": "2022",
-              "orientation": "portrait",
-              "lat": 43.76,
-              "lon": 11.26,
-              "title": "Through a mirror",
-              "caption": "Composition, chiaroscuro, and framing in everyday scenes."
-            },
-            {
-              "id": "sam-youkilis-05",
-              "cloudinaryId": "sonder/florence/sam-youkilis-05",
-              "year": "2023",
-              "orientation": "portrait",
-              "lat": 43.77,
-              "lon": 11.25,
-              "title": "Town square",
-              "caption": "The casual tenderness of human gestures in public space."
-            },
-            {
-              "id": "sam-youkilis-06",
-              "cloudinaryId": "sonder/florence/sam-youkilis-06",
-              "year": "2022",
-              "orientation": "portrait",
-              "lat": 43.77,
-              "lon": 11.26,
-              "title": "Alleyway light",
-              "caption": "Finding a frame I like and waiting for things to happen within it."
             }
           ]
         }
@@ -370,16 +280,6 @@
               "lon": -9.76,
               "title": "Atlantic coast",
               "caption": "Every visit to Essaouira, I make sure to stop in Sidi Kaouki as well."
-            },
-            {
-              "id": "sam-youkilis-03",
-              "cloudinaryId": "sonder/essaouira/sam-youkilis-03",
-              "year": "2021",
-              "orientation": "landscape",
-              "lat": 31.5,
-              "lon": -9.77,
-              "title": "Fishing boats",
-              "caption": "Fishing boats drifting in the water — light and the rhythm of the coast."
             },
             {
               "id": "sam-youkilis-04",
@@ -437,26 +337,6 @@
               "lon": 139.7,
               "title": "Evening crossing",
               "caption": "Everyday Tokyo — soft light and passing trains."
-            },
-            {
-              "id": "sam-youkilis-04",
-              "cloudinaryId": "sonder/tokyo/sam-youkilis-04",
-              "year": "2022",
-              "orientation": "portrait",
-              "lat": 35.68,
-              "lon": 139.7,
-              "title": "Pedestrian crossing",
-              "caption": "Soft light, passing trains, and everyday Tokyo."
-            },
-            {
-              "id": "sam-youkilis-05",
-              "cloudinaryId": "sonder/tokyo/sam-youkilis-05",
-              "year": "2022",
-              "orientation": "portrait",
-              "lat": 35.69,
-              "lon": 139.77,
-              "title": "Street vendor",
-              "caption": "Cultural practices and everyday scenes captured on the road through Japan."
             }
           ]
         }
@@ -475,16 +355,6 @@
           "url": "https://www.instagram.com/samyoukilis/",
           "instagram": "https://www.instagram.com/samyoukilis/?hl=en",
           "images": [
-            {
-              "id": "sam-youkilis-01",
-              "cloudinaryId": "sonder/naples/sam-youkilis-01",
-              "year": "2023",
-              "orientation": "portrait",
-              "lat": 40.85,
-              "lon": 14.25,
-              "title": "Spaccanapoli",
-              "caption": "I fell in love with Naples immediately — a visually rich place and a huge source of inspiration."
-            },
             {
               "id": "sam-youkilis-02",
               "cloudinaryId": "sonder/naples/sam-youkilis-02",

@@ -42,6 +42,18 @@ interface CatalogCity {
   }[];
 }
 
+interface CatalogImage {
+  id: string;
+  cityId: string;
+  cityName: string;
+  photographerId: string;
+  photographerName: string;
+  title: string;
+  year?: string;
+  thumbnailUrl: string;
+  archiveUrl: string;
+}
+
 interface AdminPanelProps {
   enabled: boolean;
 }
@@ -64,6 +76,9 @@ export function AdminPanel({ enabled }: AdminPanelProps) {
   const [password, setPassword] = useState("");
   const [storedPassword, setStoredPassword] = useState<string | null>(null);
   const [catalog, setCatalog] = useState<CatalogCity[]>([]);
+  const [catalogImages, setCatalogImages] = useState<CatalogImage[]>([]);
+  const [catalogFilterCityId, setCatalogFilterCityId] = useState("");
+  const [deletingImageKey, setDeletingImageKey] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -110,6 +125,21 @@ export function AdminPanel({ enabled }: AdminPanelProps) {
     () => catalog.find((city) => city.id === cityId),
     [catalog, cityId]
   );
+
+  const filteredCatalogImages = useMemo(() => {
+    if (!catalogFilterCityId) return catalogImages;
+    return catalogImages.filter((image) => image.cityId === catalogFilterCityId);
+  }, [catalogImages, catalogFilterCityId]);
+
+  async function loadCatalog(password: string) {
+    const res = await fetch("/api/admin/catalog", {
+      headers: { "x-admin-password": password },
+    });
+    const data = await res.json();
+
+    if (data.cities) setCatalog(data.cities);
+    if (data.images) setCatalogImages(data.images);
+  }
 
   useEffect(() => {
     if (isNewCity || !selectedCity) return;
@@ -164,17 +194,7 @@ export function AdminPanel({ enabled }: AdminPanelProps) {
 
   useEffect(() => {
     if (!storedPassword || !enabled) return;
-
-    fetch("/api/admin/catalog", {
-      headers: { "x-admin-password": storedPassword },
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.cities) {
-          setCatalog(data.cities);
-        }
-      })
-      .catch(() => setError("Could not load catalog"));
+    loadCatalog(storedPassword).catch(() => setError("Could not load catalog"));
   }, [storedPassword, enabled]);
 
   useEffect(() => {
@@ -212,6 +232,9 @@ export function AdminPanel({ enabled }: AdminPanelProps) {
     sessionStorage.removeItem(SCAN_CACHE_KEY);
     setStoredPassword(null);
     setCatalog([]);
+    setCatalogImages([]);
+    setCatalogFilterCityId("");
+    setDeletingImageKey(null);
     setScanResult(null);
     setSelectedPhotoId("");
     setImportWarnings([]);
@@ -363,6 +386,42 @@ export function AdminPanel({ enabled }: AdminPanelProps) {
     }
   }
 
+  async function handleDeleteImage(image: CatalogImage) {
+    if (!storedPassword) return;
+
+    const label = image.title || `${image.photographerName}, ${image.cityName}`;
+    if (!window.confirm(`Delete “${label}”? This cannot be undone.`)) return;
+
+    const imageKey = `${image.cityId}-${image.id}`;
+    setDeletingImageKey(imageKey);
+    setError(null);
+    setMessage(null);
+
+    try {
+      const res = await fetch("/api/admin/images", {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+          "x-admin-password": storedPassword,
+        },
+        body: JSON.stringify({
+          cityId: image.cityId,
+          imageId: image.id,
+        }),
+      });
+
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error ?? "Delete failed");
+
+      setMessage(`Deleted ${image.id}.`);
+      await loadCatalog(storedPassword);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Delete failed");
+    } finally {
+      setDeletingImageKey(null);
+    }
+  }
+
   async function handleUpload(e: React.FormEvent) {
     e.preventDefault();
     if (!storedPassword || !file) return;
@@ -423,11 +482,7 @@ export function AdminPanel({ enabled }: AdminPanelProps) {
         setCityName("");
       }
 
-      const catalogRes = await fetch("/api/admin/catalog", {
-        headers: { "x-admin-password": storedPassword },
-      });
-      const catalogData = await catalogRes.json();
-      if (catalogData.cities) setCatalog(catalogData.cities);
+      await loadCatalog(storedPassword);
     } catch (err) {
       setError(err instanceof Error ? err.message : "Upload failed");
     } finally {
@@ -488,6 +543,96 @@ export function AdminPanel({ enabled }: AdminPanelProps) {
       </header>
 
       <main className="mx-auto max-w-3xl px-6 py-10">
+        <section className="mb-12 space-y-4">
+          <div className="flex flex-wrap items-end justify-between gap-4">
+            <div>
+              <h2 className="font-display text-lg text-charcoal">Catalog</h2>
+              <p className="mt-1 font-body text-xs text-charcoal/50">
+                {catalogImages.length === 0
+                  ? "No photographs yet"
+                  : `${catalogImages.length} photograph${catalogImages.length === 1 ? "" : "s"}`}
+              </p>
+            </div>
+
+            {catalog.length > 0 && (
+              <Field label="Filter by city">
+                <select
+                  value={catalogFilterCityId}
+                  onChange={(e) => setCatalogFilterCityId(e.target.value)}
+                  className={inputClass}
+                >
+                  <option value="">All cities</option>
+                  {catalog.map((city) => (
+                    <option key={city.id} value={city.id}>
+                      {city.name}
+                    </option>
+                  ))}
+                </select>
+              </Field>
+            )}
+          </div>
+
+          {filteredCatalogImages.length > 0 ? (
+            <div className="grid grid-cols-2 gap-4 sm:grid-cols-3">
+              {filteredCatalogImages.map((image) => {
+                const imageKey = `${image.cityId}-${image.id}`;
+                const isDeleting = deletingImageKey === imageKey;
+
+                return (
+                  <article
+                    key={imageKey}
+                    className="group overflow-hidden rounded-sm border border-charcoal/10 bg-polaroid"
+                  >
+                    <Link
+                      href={image.archiveUrl}
+                      className="block overflow-hidden"
+                      target="_blank"
+                    >
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={image.thumbnailUrl}
+                        alt={image.title}
+                        className="block h-36 w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+                        loading="lazy"
+                      />
+                    </Link>
+
+                    <div className="space-y-2 p-3">
+                      <div>
+                        <p className="line-clamp-2 font-body text-xs text-charcoal">
+                          {image.title}
+                        </p>
+                        <p className="mt-1 font-body text-[10px] text-charcoal/50">
+                          {image.photographerName}
+                          {image.year ? ` · ${image.year}` : ""}
+                        </p>
+                        <p className="font-body text-[10px] text-charcoal/40">
+                          {image.cityName}
+                        </p>
+                      </div>
+
+                      <button
+                        type="button"
+                        onClick={() => handleDeleteImage(image)}
+                        disabled={isDeleting}
+                        className="font-body text-[10px] tracking-wide text-red-700/80 uppercase transition-colors hover:text-red-700 disabled:cursor-not-allowed disabled:opacity-40"
+                      >
+                        {isDeleting ? "Deleting..." : "Delete"}
+                      </button>
+                    </div>
+                  </article>
+                );
+              })}
+            </div>
+          ) : (
+            <p className="rounded-sm border border-dashed border-charcoal/15 px-4 py-8 text-center font-body text-sm text-charcoal/45">
+              {catalogImages.length === 0
+                ? "Upload a photograph below to get started."
+                : "No photographs in this city."}
+            </p>
+          )}
+        </section>
+
       <form onSubmit={handleUpload} className="space-y-8">
         <section className="space-y-4">
           <h2 className="font-display text-lg text-charcoal">Import from link</h2>

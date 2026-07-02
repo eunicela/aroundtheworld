@@ -220,3 +220,61 @@ export async function addImageToCatalog(input: {
 
   return { imageId, cloudinaryId, publicPath, cityId: city.id };
 }
+
+export async function deleteImageFile(
+  cloudinaryId: string,
+  format?: ImageData["format"]
+): Promise<void> {
+  const ext = format === "jpeg" ? "jpg" : format ?? "jpg";
+  const filePath = path.join(PUBLIC_DIR, `${cloudinaryId}.${ext}`);
+
+  try {
+    await fs.unlink(filePath);
+  } catch (error) {
+    if ((error as NodeJS.ErrnoException).code !== "ENOENT") throw error;
+  }
+}
+
+export async function deleteImageFromCatalog(
+  cityId: string,
+  imageId: string
+): Promise<void> {
+  const data = await readSonderData();
+  const cityIndex = data.cities.findIndex((entry) => entry.id === cityId);
+  if (cityIndex === -1) throw new Error("City not found");
+
+  const city = data.cities[cityIndex];
+  let foundImage: ImageData | undefined;
+  let photographerId: string | undefined;
+
+  for (const photographer of city.photographers) {
+    const image = photographer.images.find((entry) => entry.id === imageId);
+    if (image) {
+      foundImage = image;
+      photographerId = photographer.id;
+      break;
+    }
+  }
+
+  if (!foundImage || !photographerId) throw new Error("Image not found");
+
+  const updatedPhotographers = city.photographers
+    .map((photographer) =>
+      photographer.id === photographerId
+        ? {
+            ...photographer,
+            images: photographer.images.filter((entry) => entry.id !== imageId),
+          }
+        : photographer
+    )
+    .filter((photographer) => photographer.images.length > 0);
+
+  if (updatedPhotographers.length === 0) {
+    data.cities = data.cities.filter((entry) => entry.id !== cityId);
+  } else {
+    data.cities[cityIndex] = { ...city, photographers: updatedPhotographers };
+  }
+
+  await deleteImageFile(foundImage.cloudinaryId, foundImage.format);
+  await writeSonderData(data);
+}

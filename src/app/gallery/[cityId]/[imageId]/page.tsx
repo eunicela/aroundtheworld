@@ -1,8 +1,9 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { SiteHeader } from "@/components/ui/SiteHeader";
+import { PhotoDescription } from "@/components/ui/PhotoDescription";
 import { readSonderData } from "@/lib/admin";
-import { getArchiveImage } from "@/lib/data";
+import { findImageInData, getArchiveImage } from "@/lib/data";
 
 interface PageProps {
   params: Promise<{ cityId: string; imageId: string }>;
@@ -15,23 +16,27 @@ export default async function GalleryDetailPage({ params }: PageProps) {
 
   if (!image) notFound();
 
+  const rawImage = findImageInData(data, cityId, imageId);
+  const editorialCaption = rawImage?.caption;
+
+  const photographerLink =
+    image.photographerInstagram ?? image.photographerUrl;
+
   return (
-    <div className="min-h-screen bg-paper">
-      <SiteHeader widthClass="max-w-6xl" paddingClass="px-4">
+    <div className="grid min-h-screen grid-rows-[auto_1fr] bg-paper">
+      <SiteHeader paddingClass="px-4 md:px-6">
         <Link
           href="/gallery"
           className="inline-flex items-center font-body text-charcoal/40 transition-colors hover:text-charcoal/70"
           aria-label="Back to gallery"
         >
-          <span className="flex h-8 w-8 items-center justify-center rounded-full border border-charcoal/15 transition-colors hover:border-charcoal/30">
-            ←
-          </span>
+          ←
         </Link>
       </SiteHeader>
 
-      <main className="mx-auto max-w-6xl px-4 pb-24">
-        <div className="grid gap-10 md:grid-cols-[1.4fr_1fr] md:gap-16">
-          <div className="flex items-start justify-center">
+      <main className="flex items-center justify-center px-4 pb-16 md:px-6">
+        <div className="flex w-full max-w-5xl flex-col items-center gap-10 md:flex-row md:items-center md:justify-center md:gap-12 lg:gap-16">
+          <div className="flex shrink-0 items-center justify-center">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={image.fullUrl}
@@ -40,18 +45,20 @@ export default async function GalleryDetailPage({ params }: PageProps) {
             />
           </div>
 
-          <div className="flex flex-col justify-center">
+          <div className="flex w-full max-w-sm flex-col justify-center md:w-auto md:min-w-[16rem] md:max-w-xs lg:max-w-sm">
             <h1 className="font-display text-2xl leading-snug text-charcoal md:text-3xl">
               {image.title}
             </h1>
 
             <div className="mt-4 flex flex-wrap items-baseline gap-x-3 gap-y-1">
-              <Link
-                href={`/photographer/${image.photographerId}`}
+              <a
+                href={photographerLink}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="font-body text-sm text-charcoal/70 transition-colors hover:text-accent"
               >
                 {image.photographerName}
-              </Link>
+              </a>
               {image.year && (
                 <span className="font-body text-sm text-charcoal/40">
                   {image.year}
@@ -63,35 +70,24 @@ export default async function GalleryDetailPage({ params }: PageProps) {
               {image.cityName}
             </p>
 
-            <p className="mt-8 font-body text-sm leading-relaxed text-charcoal/75">
-              {image.caption}
-            </p>
+            <div className="mt-8">
+              <PhotoDescription
+                cityId={cityId}
+                imageId={imageId}
+                editorialCaption={editorialCaption}
+                fallbackText={editorialCaption ? undefined : image.caption}
+              />
+            </div>
 
-            <div className="mt-10 flex flex-wrap gap-4">
-              <Link
-                href={`/photographer/${image.photographerId}`}
-                className="rounded-full border border-charcoal/15 px-5 py-2 font-body text-xs tracking-wide text-charcoal/70 transition-colors hover:border-charcoal/30 hover:text-charcoal"
-              >
-                View photographer
-              </Link>
+            <div className="mt-10">
               <a
-                href={image.photographerUrl}
+                href={photographerLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-full border border-charcoal/15 px-5 py-2 font-body text-xs tracking-wide text-charcoal/70 transition-colors hover:border-charcoal/30 hover:text-charcoal"
+                className="inline-flex rounded-full border border-charcoal/15 px-5 py-2 font-body text-xs tracking-wide text-charcoal/70 transition-colors hover:border-charcoal/30 hover:text-charcoal"
               >
-                Website
+                View photographer
               </a>
-              {image.photographerInstagram && (
-                <a
-                  href={image.photographerInstagram}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="rounded-full border border-charcoal/15 px-5 py-2 font-body text-xs tracking-wide text-charcoal/70 transition-colors hover:border-charcoal/30 hover:text-charcoal"
-                >
-                  Instagram
-                </a>
-              )}
             </div>
           </div>
         </div>

@@ -28,9 +28,12 @@ export function ContinentOutlines() {
         color: CONTINENT_COLOR,
         transparent: true,
         opacity: CONTINENT_OPACITY,
+        depthWrite: false,
       });
       material.userData.baseOpacity = CONTINENT_OPACITY;
-      return new THREE.Line(geo, material);
+      const line = new THREE.Line(geo, material);
+      line.renderOrder = -10;
+      return line;
     });
   }, [geometries]);
 

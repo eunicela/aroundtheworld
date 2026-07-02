@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { SiteHeader } from "@/components/ui/SiteHeader";
+import { SiteHeader, SiteHeaderTitle } from "@/components/ui/SiteHeader";
 import { readSonderData } from "@/lib/admin";
 import { getAllArchiveImages } from "@/lib/data";
 
@@ -18,9 +18,7 @@ export default async function GalleryPage() {
     <div className="min-h-screen bg-paper">
       <SiteHeader className="mb-8">
         <div>
-          <h1 className="max-w-2xl font-display text-2xl leading-snug text-charcoal md:text-3xl">
-            come watch people around the world...
-          </h1>
+          <SiteHeaderTitle />
           <p className="mt-3 max-w-md font-body text-sm text-charcoal/50">
             {images.length === 0
               ? "No photographs yet"

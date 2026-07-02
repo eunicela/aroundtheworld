@@ -129,15 +129,6 @@ export function getPhotographerFromData(
   return merged;
 }
 
-export function getPhotographerCitiesFromData(
-  data: SonderData,
-  id: string
-): City[] {
-  return data.cities.filter((c) =>
-    c.photographers.some((p) => p.id === id)
-  );
-}
-
 function galleryThumbnailDimensions(
   imageId: string,
   orientation: ImageData["orientation"]
@@ -154,6 +145,13 @@ function galleryThumbnailDimensions(
   }
 
   return { width, height: Math.round(width * (0.5 + t * 0.45)) };
+}
+
+export function getPhotoDisplayDimensions(
+  imageId: string,
+  orientation: ImageData["orientation"]
+): { width: number; height: number } {
+  return galleryThumbnailDimensions(imageId, orientation);
 }
 
 function buildArchiveImage(

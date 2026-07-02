@@ -54,9 +54,12 @@ export function WireframeGlobe() {
         color: GRID_COLOR,
         transparent: true,
         opacity: GRID_OPACITY,
+        depthWrite: false,
       });
       material.userData.baseOpacity = GRID_OPACITY;
-      return new THREE.Line(geo, material);
+      const line = new THREE.Line(geo, material);
+      line.renderOrder = -10;
+      return line;
     });
   }, []);
 
