@@ -66,7 +66,7 @@ export default async function GalleryDetailPage({ params }: PageProps) {
               )}
             </div>
 
-            <p className="mt-1 font-body text-xs tracking-widest text-accent uppercase">
+            <p className="mt-1 font-body text-xs tracking-widest text-[#969696] uppercase">
               {image.cityName}
             </p>
 
